@@ -1,0 +1,2728 @@
+@charset 'utf-8';
+@import url('font.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    letter-spacing: -0.0425rem;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Roboto', 'noto-latin-ko', '맑은고딕', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+    color: #000;
+    letter-spacing: -0.0375rem;
+    word-break: break-all;
+}
+
+/* 공통 클래스 */
+.container {
+    position: relative;
+    display: block;
+    width: 120rem;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* 우측 고정 메뉴 */
+
+.fix-menu {
+    position: fixed;
+    right: 0;
+    top: 17.5rem;
+    display: block;
+    width: 8.5rem;
+    background: #fff;
+    border: 0.1rem solid #ddd;
+    box-shadow: 0 4px 9px 0 rgb(0 0 0 / 10%);
+    border-radius: 2rem;
+    z-index: 9;
+    padding-top: 2rem;
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+.fix-menu ul {
+    position: relative;
+    display: block;
+}
+
+.fix-menu ul>li {
+    position: relative;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.fix-menu ul>li:last-child {
+    margin-bottom: 0;
+}
+
+.fix-menu ul>li>a {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.461;
+    letter-spacing: -0.0325rem;
+}
+
+.i-login::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 3.6rem;
+    height: 2.6rem;
+    background: url('../images/icoFloating.png') no-repeat;
+    background-position: 0 -0.3rem;
+    margin: 0 auto;
+}
+
+.i-order::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 3.6rem;
+    height: 2.9rem;
+    background: url('../images/icoFloating.png') no-repeat;
+    background-position: 0 -3.4rem;
+    margin: 0 auto;
+}
+
+.i-qa::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 3.6rem;
+    height: 3rem;
+    background: url('../images/icoFloating.png') no-repeat;
+    background-position: 0 -6.4rem;
+    margin: 0 auto;
+}
+
+.i-cook::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 3.6rem;
+    height: 2.9rem;
+    background: url('../images/icoFloating.png') no-repeat;
+    background-position: 0 -9.7rem;
+    margin: 0 auto;
+}
+
+.fix-menu a::after {
+    margin-top: 0.5rem;
+}
+
+.fix-menu ul>li>a>img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.gotop {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #000;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 3rem;
+    letter-spacing: -0.0275rem;
+    border-radius: 0 0 2rem 2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    margin-top: 2rem;
+}
+
+/* 전체 레이아웃 */
+.wrap {
+    position: relative;
+    display: block;
+}
+
+/* 상단 영역 */
+.header {
+    position: relative;
+    display: block;
+    border-bottom: 0.1rem solid #ddd;
+    z-index: 999;
+}
+
+.header-top {
+    position: relative;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.header-top>.left {
+    padding-top: 3rem;
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    border: 0;
+    vertical-align: top;
+}
+
+.calendar {
+    position: relative;
+    display: inline-block;
+    margin-left: 1.5rem;
+    border: 0;
+    vertical-align: -0.8rem;
+}
+
+.calendar>img {
+    margin-right: 0.5rem;
+    vertical-align: -0.2rem;
+}
+
+.calendar>span {
+    padding-right: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+    color: #666;
+    letter-spacing: 0.0325rem;
+}
+
+.mymenu {
+    position: absolute;
+    right: 0;
+    top: 2.5rem;
+    display: block;
+}
+
+.mymenu>li {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.mymenu>li>a {
+    position: relative;
+    display: block;
+    padding-right: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    vertical-align: top;
+    color: #666;
+}
+
+.mymenu>li:before {
+    content: '';
+    position: absolute;
+    left: -0.8rem;
+    top: 0.5rem;
+    width: 0.1rem;
+    height: 0.8rem;
+    background-color: #bbb;
+    display: block;
+}
+
+.mymenu>li:first-child:before {
+    content: none;
+}
+
+.mymenu>li:nth-child(3)>a {
+    padding-right: 2.6rem;
+}
+
+.mymenu>li:nth-child(3)>a::after {
+    content: '';
+    position: absolute;
+    right: 0.5rem;
+    top: 0.6rem;
+    width: 1rem;
+    height: 0.6rem;
+    background: url(../images/icoMyMenu.png)no-repeat right top;
+    background-position: 0px 0px;
+
+    margin-right: 0.5rem;
+}
+
+.center-submenu {
+    position: absolute;
+    left: 50%;
+    top: 2.5rem;
+    z-index: 3;
+    margin-left: 0.5rem;
+    padding: 1rem 2rem 2rem 2rem;
+    background-color: #fff;
+    border: 0.1rem solid #ddd;
+    box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 16%);
+    transform: translateX(-50%);
+
+    display: none;
+}
+
+.center-submenu>li {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+}
+
+.center-submenu>li>a {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    color: #666;
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+}
+
+.center-submenu>li>a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0rem;
+    display: block;
+    width: 100%;
+    height: 0.1rem;
+    background-color: #000;
+    visibility: hidden;
+}
+
+.center-submenu>li>a:hover:after {
+    visibility: visible;
+}
+
+.header-bottom {
+    position: relative;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.gnb-wrap {
+    position: relative;
+    display: block;
+    padding-top: 1.1rem;
+}
+
+.all {
+    position: relative;
+    display: block;
+}
+
+.all-bt {
+    position: relative;
+    display: inline-block;
+    line-height: 1.8rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: -0.0425rem;
+    margin-right: 3rem;
+}
+
+.all-bt span {
+    position: relative;
+    display: block;
+    float: left;
+
+    margin-right: 1.5rem;
+
+    width: 2rem;
+    height: 1.8rem;
+    background-color: #fff;
+
+    border-top: 0.2rem solid #000;
+    border-bottom: 0.2rem solid #000;
+}
+
+.all-bt span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: block;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+
+
+.category-list {
+    position: relative;
+    display: block;
+}
+
+.category-list>li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0 1.5rem;
+}
+
+.category-list>li:first-child {
+    margin-left: 0;
+}
+
+.category-list>li:last-child {
+    margin-right: 0;
+}
+
+.category-list>li>a {
+    position: relative;
+    display: block;
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: -0.0425rem;
+    line-height: 1.8rem;
+}
+
+.category-list>li>a:hover {
+    color: #76bd42;
+}
+
+.category-dot {}
+
+.category-list-more-active {
+    color: #76bd42 !important;
+}
+
+.category-list-more-active::after {
+    background-position: 0px -0.8rem;
+}
+
+.category-dot::after {
+    content: '';
+    position: absolute;
+    top: -0.1rem;
+    right: -0.7rem;
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #f58320;
+}
+
+.category-list-more::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 1.1rem;
+    height: 0.7rem;
+    background: url('../images/icoGnbArr2.png') no-repeat;
+    background-position: 0px 0px;
+    margin-left: 0.4rem;
+    vertical-align: 0.2rem;
+}
+
+.category-list-2 {
+    position: absolute;
+    left: 50%;
+    top: 3.8rem;
+    transform: translateX(-50%);
+    display: none;
+    background-color: #fff;
+    padding: 1.5rem 2rem;
+    border: 0.1rem solid #ddd;
+    box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 16%);
+}
+
+.category-list-2>li {
+    position: relative;
+    display: block;
+}
+
+.category-list-2>li>a {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #666;
+    letter-spacing: -0.0375rem;
+    line-height: 2.466;
+}
+
+.category-list-2>li>a:hover {
+    color: #000;
+}
+
+.category-list-2>li>a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0.5rem;
+    width: 100%;
+    height: 0.1rem;
+    background-color: #000;
+}
+
+.see-more {
+    position: relative;
+    display: block;
+    margin-left: 4rem;
+}
+
+.see-more-bt {
+    position: relative;
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: -0.0325rem;
+    line-height: 1.9rem;
+    text-align: right;
+    width: 6rem;
+}
+
+.see-more-bt-open {
+    position: relative;
+    display: block;
+    color: #666;
+}
+
+.see-more-bt-open::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 1rem;
+    height: 0.6rem;
+    background: url('../images/icoGnbArr3.png') no-repeat;
+    background-position: 0px 0px;
+    margin-left: 0.6rem;
+    vertical-align: 0.2rem;
+}
+
+.see-more-bt-close {
+    position: relative;
+    display: none;
+    color: #7abd42;
+}
+
+.see-more-bt-close::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 1rem;
+    height: 0.6rem;
+    background: url('../images/icoGnbArr3.png') no-repeat;
+    background-position: 0px 0.6rem;
+    margin-left: 0.6rem;
+    vertical-align: 0.2rem;
+}
+
+.see-more-list {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3.8rem;
+    display: none;
+    background-color: #fff;
+    padding: 1.5rem 2.0rem;
+    border: 0.1rem solid #ddd;
+    box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 16%);
+
+}
+
+.see-more-list>li {
+    position: relative;
+    display: block;
+}
+
+.see-more-list>li>a {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #666;
+    letter-spacing: -0.0375rem;
+    line-height: 2.466;
+}
+
+.see-more-list>li>a:hover {
+    color: #000;
+}
+
+.see-more-list>li>a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0.5rem;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+}
+
+.search-wrap {
+    position: relative;
+    display: block;
+}
+
+
+.search-form {
+    position: relative;
+    display: block;
+    float: left;
+    padding-left: 2.0rem;
+    padding-right: 4.0rem;
+    background-color: #f7f7f7;
+    border-radius: 2rem;
+    width: 32.5rem;
+}
+
+.s-txt-label {
+    position: absolute;
+    display: block;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+}
+
+.search-form-txt {
+    position: relative;
+    display: block;
+    border: none;
+    background-color: none;
+    color: #000;
+    font-size: 1.3rem;
+    line-height: 4rem;
+    font-weight: 400;
+    background-color: #f7f7f7;
+    width: 100%;
+}
+
+.search-form-txt:focus+.s-txt-label {
+    display: none;
+}
+
+.search-form-img {
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    display: block;
+}
+
+.cart {
+    position: relative;
+    display: block;
+    float: left;
+    width: 3.6rem;
+    height: 4rem;
+    background: url('../images/btnCart.png') no-repeat center;
+    background-position: 0px center;
+    margin-left: 2.5rem;
+}
+
+.count {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background-color: #76bd42;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.8rem;
+}
+
+/* 비주얼 영역 */
+.visual {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 41rem;
+    overflow: hidden;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* 필요할 때 사용 */
+.sw-visual {}
+
+/* 기본으로 이미 제공되고 있다. */
+.swiper-wrapper {}
+
+.swiper-slide {}
+
+/* 각 슬라이드의 내용은 콘트롤한다. */
+.sw-visual .swiper-slide a {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.sw-visual-prev {
+    position: absolute;
+    left: calc(50% - 58rem);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 6.4rem;
+    height: 6.4rem;
+    background: url('../images/visualArrP.png') no-repeat;
+    background-position: 0px -6.4rem;
+    z-index: 99;
+}
+
+.sw-visual-prev:hover {
+    background-position: 0 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sw-visual-next {
+    position: absolute;
+    left: calc(50% + 58rem);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 6.4rem;
+    height: 6.4rem;
+    background: url('../images/visualArrN.png') no-repeat;
+    background-position: 0px -6.4rem;
+    z-index: 99;
+}
+
+.sw-visual-next:hover {
+    background-position: 0 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sw-visual-control {
+    position: absolute;
+    left: calc(50% - 53rem);
+    bottom: 4rem;
+    display: block;
+    z-index: 99;
+}
+
+.sw-visual-bt {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background: url('../images/visualPlay.png') no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+}
+
+.sw-visual-bt-play {
+    background-position: 0 -3rem;
+}
+
+.swiper-pagination {}
+
+.sw-visual-pg {
+    left: 3.8rem;
+    bottom: 0;
+    display: inline-block;
+    width: 5.2rem;
+    height: 3rem;
+    background: url('../images/visualNum.png') no-repeat center;
+    color: #fff;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.sw-visual-more {
+    position: absolute;
+    left: 9.2rem;
+    bottom: 0rem;
+    display: block;
+    width: 2.9rem;
+    height: 3rem;
+    background: url('../images/visualMore.png') no-repeat center;
+}
+
+/* 상품 영역 */
+.recommend {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    padding: 8rem 0;
+}
+
+.recommend-title {
+    position: relative;
+    display: block;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.25;
+    letter-spacing: -0.08rem;
+    margin-bottom: 3rem;
+}
+
+/* 상품리스트 */
+.good-list {
+    position: relative;
+    display: block;
+}
+
+.mb-70 {
+    margin-bottom: 7rem;
+}
+
+.good-list>li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 24.16%;
+    margin-right: 1.12%;
+}
+
+.good-list>li:last-child {
+    margin-right: 0;
+}
+
+.good-box {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    height: 38rem;
+}
+
+.good-box-link {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.good-box-img {
+    position: relative;
+    display: block;
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 29rem;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+
+.good-box-img img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    mix-blend-mode: multiply;
+    transition: transform 0.5s;
+}
+
+.good-box-img:hover img {
+    transform: translate(-50%, -50%) scale(1.0);
+}
+
+.good-box-pop {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background-color: #76bd42;
+    color: #fff;
+    font-size: 1.5rem;
+    letter-spacing: -0.0375rem;
+    line-height: 5rem;
+    text-align: center;
+}
+
+.good-box-name {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 1.7rem;
+    font-weight: 400;
+    letter-spacing: -0.0425rem;
+    line-height: 1.294;
+    margin-bottom: 2.5rem;
+}
+
+.good-box-price {
+    position: absolute;
+    left: 0;
+    bottom: 0rem;
+    display: block;
+    color: #000;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.227;
+}
+
+.good-box-price em {
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: 700;
+    font-style: normal;
+    margin-left: 0.3rem;
+}
+
+.good-box-cart {
+    position: absolute;
+    right: 2rem;
+    bottom: 0;
+    width: 3rem;
+    height: 3rem;
+    background: url('../images/btnCartList.png') no-repeat;
+    background-position: 0 0;
+}
+
+.good-box-cart:hover {
+    background-position: 0 -3rem;
+}
+
+/* 알뜰상품 영역 */
+.sales {
+    position: relative;
+    display: block;
+    background-color: #edf9f9;
+    padding: 8rem 0;
+}
+
+.sales .container {
+    height: 41.5rem;
+}
+
+.sales-box {
+    position: relative;
+    display: block;
+    width: 30rem;
+    height: 100%;
+}
+
+.sales-box-title {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.08rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.sales-box-title b {
+    font-weight: 700;
+}
+
+.sales-box-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 2rem;
+    height: 0.2rem;
+    background: #707070;
+}
+
+.sales-box-txt {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.0375rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.sales-box-link {
+    position: relative;
+    display: block;
+    width: 11.4rem;
+    border: 0.1rem solid #ddd;
+    background: #fff;
+    transition: background-color 0.5s;
+    text-align: center;
+    color: #666;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: -0.0375rem;
+    line-height: 3.4rem;
+}
+
+.sales-box-link:hover {
+    background-color: #f8f8f8;
+}
+
+.sw-sales-control {
+    position: absolute;
+    left: 0;
+    top: 34.5rem;
+    display: block;
+}
+
+.sw-sales-prev {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 2.6rem;
+    height: 2rem;
+    background: url('../images/swiperArrP.png') no-repeat;
+    background-position: 0 0;
+}
+
+.sw-sales-prev:hover {
+    background-position: 0 -2rem;
+    cursor: pointer;
+}
+
+.sw-sales-next {
+    position: absolute;
+    left: 11.5rem;
+    top: 0;
+    display: block;
+    width: 2.6rem;
+    height: 2rem;
+    background: url('../images/swiperArrN.png') no-repeat;
+    background-position: 0 0;
+}
+
+.sw-sales-next:hover {
+    background-position: 0 -2rem;
+    cursor: pointer;
+}
+
+.sw-sales-pg {
+    left: 2.6rem;
+    top: 0;
+    width: 9rem;
+    color: #bbb;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.04rem;
+}
+
+.sw-sales-pg .swiper-pagination-current {
+    font-weight: 700;
+    color: #222;
+}
+
+.sales-slide {
+    position: relative;
+    display: block;
+    width: 90rem;
+    height: 100%;
+}
+
+.sw-sales {}
+
+.sw-sales .good-box {
+    height: 100%;
+}
+
+.sw-sales .good-box-img {
+    background: #fff;
+}
+
+.sw-sales .good-box-name {
+    padding: 0 2rem;
+}
+
+.sw-sales .good-box-price {
+    padding: 0 2rem;
+    bottom: 2rem;
+}
+
+.sw-sales .good-box-cart {
+    bottom: 2rem;
+}
+
+/* 새상품 영역 */
+.new {
+    position: relative;
+    display: block;
+    padding: 8rem 0;
+    background-color: #fff;
+}
+
+.new-title {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.08rem;
+    margin-bottom: 2.5rem;
+}
+
+.new-title b {
+    font-weight: 700;
+}
+
+.new-link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 11.4rem;
+
+    color: #666;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: -0.0375rem;
+    line-height: 3.4rem;
+    text-align: center;
+
+    border: 0.1rem solid #ddd;
+    transition: background-color 0.5s;
+    background: #fff;
+}
+
+.new-link:hover {
+    background-color: #f8f8f8;
+}
+
+.new-wrap {
+    position: relative;
+    display: block;
+    padding-bottom: 4rem;
+    border-bottom: 0.1rem solid #ededed;
+}
+
+.new-main {
+    position: relative;
+    display: block;
+    width: 59rem;
+}
+
+.new-main>a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.new-main-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 37.5rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.new-main-img img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.new-main-title {
+    position: relative;
+    display: inline-block;
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.48;
+    letter-spacing: -0.0625rem;
+    margin-bottom: 0.5rem;
+}
+
+.new-main-desc {
+    position: relative;
+    display: inline-block;
+    color: #000;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.48;
+    letter-spacing: -0.0425rem;
+}
+
+.new-list {
+    position: relative;
+    display: block;
+    width: 59rem;
+}
+
+.new-good-link {
+    position: relative;
+    display: block;
+    width: 48.73%;
+    float: left;
+    margin-right: 2.54%;
+}
+
+.new-good-link:nth-child(2n) {
+    margin-right: 0;
+}
+
+.new-good-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 18rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.new-good-img img {
+    width: 100%;
+    height: auto;
+}
+
+.new-good-title {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.47;
+    letter-spacing: -0.0425rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 추천상품 영역 */
+.pick {
+    position: relative;
+    display: block;
+    padding: 8rem 0;
+    background-color: #fef7f9;
+}
+
+.pick-box {
+    position: relative;
+    display: block;
+    width: 30rem;
+    height: 41.5rem;
+}
+
+.pick-box-title {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.08rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pick-box-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 2rem;
+    height: 0.2rem;
+    background: #707070;
+}
+
+.pick-box-title em {
+    color: #76bd42;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.pick-box-title b {
+    font-weight: 700;
+}
+
+.pick-box-txt {
+    position: relative;
+    display: inline-block;
+    color: #333;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: -0.0425rem;
+
+    margin-bottom: 2.5rem;
+}
+
+.pick-box-txt::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 0.2rem;
+    background: #76bd42;
+}
+
+.sw-pick-control {
+    position: relative;
+    display: block;
+    margin-top: 2.5rem;
+}
+
+.sw-pick-prev {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 2.6rem;
+    height: 2rem;
+    background: url('../images/swiperArrP.png') no-repeat;
+    background-position: 0 0;
+}
+
+.sw-pick-prev:hover {
+    background-position: 0 -2rem;
+    cursor: pointer;
+}
+
+.sw-pick-next {
+    position: absolute;
+    left: 11.5rem;
+    bottom: 0;
+    display: block;
+    width: 2.6rem;
+    height: 2rem;
+    background: url('../images/swiperArrN.png') no-repeat;
+    background-position: 0 0;
+}
+
+.sw-pick-next:hover {
+    background-position: 0 -2rem;
+    cursor: pointer;
+}
+
+.sw-pick-pg {
+    left: 2.6rem;
+    bottom: 0;
+    width: 9rem;
+    color: #bbb;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.04rem;
+}
+
+.sw-pick-pg .swiper-pagination-current {
+    font-weight: 700;
+    color: #222;
+}
+
+.pick-slide {
+    position: relative;
+    display: block;
+    width: 90rem;
+    height: 41.5rem;
+}
+
+.sw-pick {}
+
+.sw-pick .good-box {
+    height: 100%;
+}
+
+.sw-pick .good-box-img {
+    background: #fff;
+}
+
+.sw-pick .good-box-name {
+    padding: 0 2rem;
+}
+
+.sw-pick .good-box-price {
+    padding: 0 2rem;
+    bottom: 2rem;
+}
+
+.sw-pick .good-box-cart {
+    bottom: 2rem;
+}
+
+/* 인기상품 영역 */
+.famous {
+    position: relative;
+    display: block;
+    padding: 8rem 0;
+}
+
+.famous-title {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.08rem;
+}
+
+.famous-title b {
+    font-weight: 700;
+}
+
+.famous-link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 12.8rem;
+
+    color: #666;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: -0.0375rem;
+    line-height: 3.4rem;
+    text-align: center;
+
+    border: 0.1rem solid #ddd;
+    transition: background-color 0.5s;
+    background: #fff;
+}
+
+.famous-link:hover {
+    background-color: #f8f8f8;
+}
+
+.famous-slide {
+    position: relative;
+    display: block;
+    height: 14rem;
+    margin-bottom: 4rem;
+    margin-top: 2.5rem;
+}
+
+.sw-famous {
+    width: 104rem;
+    margin: 0 auto;
+}
+
+.sw-famous .swiper-slide>a {
+    position: relative;
+    display: block;
+    height: 100%;
+    background-color: #f8f8f8;
+    border: 0.2rem solid #f8f8f8;
+
+    color: #000;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.0425rem;
+
+    padding-top: 10rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.sw-famous .swiper-slide>a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
+    display: block;
+    width: 6.5rem;
+    height: 6.4rem;
+}
+
+.sw-famous .swiper-slide>a:hover {
+    border: 0.2rem solid #76bd42;
+    background-color: #fff;
+}
+
+.sw-famous .swiper-slide>a:hover::before {
+    background-position: 0 -6.4rem;
+}
+
+.famous-icon-1::before {
+    background: url('../images/famouse_icon_1.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-2::before {
+    background: url('../images/famouse_icon_2.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-3::before {
+    background: url('../images/famouse_icon_3.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-4::before {
+    background: url('../images/famouse_icon_4.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-5::before {
+    background: url('../images/famouse_icon_5.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-6::before {
+    background: url('../images/famouse_icon_6.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-7::before {
+    background: url('../images/famouse_icon_7.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-8::before {
+    background: url('../images/famouse_icon_8.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-9::before {
+    background: url('../images/famouse_icon_9.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-10::before {
+    background: url('../images/famouse_icon_10.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-11::before {
+    background: url('../images/famouse_icon_11.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-12::before {
+    background: url('../images/famouse_icon_12.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-13::before {
+    background: url('../images/famouse_icon_13.png') no-repeat;
+    background-position: 0 0;
+}
+
+.famous-icon-14::before {
+    background: url('../images/famouse_icon_14.png') no-repeat;
+    background-position: 0 0;
+}
+
+.sw-famous-prev {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 2.6rem;
+    height: 2rem;
+    background: url('../images/swiperArrP.png') no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+}
+
+.sw-famous-prev:hover {
+    background-position: 0 -2rem;
+}
+
+.sw-famous-next {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 2.6rem;
+    height: 2rem;
+    background: url('../images/swiperArrN.png') no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+}
+
+.sw-famous-next:hover {
+    background-position: 0 -2rem;
+}
+
+.famous .good-list {
+    display: none;
+}
+
+.famous .good-box {
+    height: 41rem;
+}
+
+.good-box-special {
+    position: relative;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.good-box-special span {
+    display: inline-block;
+    border: 0.1rem solid #e5e5e5;
+    color: #888;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.0275rem;
+    text-align: center;
+    padding: 0 0.7rem;
+}
+
+/* 브랜드 영역 */
+.brand {
+    position: relative;
+    display: block;
+    padding: 9rem 0;
+    background-color: #f3f9f0;
+}
+
+.brand-box {
+    position: relative;
+    display: block;
+    width: 30rem;
+    height: 28.5rem;
+}
+
+.brand-box-title {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.08rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.brand-box-title b {
+    font-weight: 700;
+}
+
+.brand-box-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 2rem;
+    height: 0.2rem;
+    background: #707070;
+}
+
+.brand-box-txt {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.0375rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.brand-box-link {
+    position: relative;
+    display: block;
+    width: 11.4rem;
+    border: 0.1rem solid #ddd;
+    background: #fff;
+    transition: background-color 0.5s;
+    text-align: center;
+    color: #666;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: -0.0375rem;
+    line-height: 3.4rem;
+}
+
+.brand-box-link:hover {
+    background-color: #f8f8f8;
+}
+
+.sw-brand-control {
+    position: absolute;
+    left: 0;
+    top: 27rem;
+    display: block;
+}
+
+.sw-brand-prev {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 2.6rem;
+    height: 2rem;
+    background: url('../images/swiperArrP.png') no-repeat;
+    background-position: 0 0;
+}
+
+.sw-brand-prev:hover {
+    background-position: 0 -2rem;
+    cursor: pointer;
+}
+
+.sw-brand-next {
+    position: absolute;
+    left: 11.5rem;
+    top: 0;
+    display: block;
+    width: 2.6rem;
+    height: 2rem;
+    background: url('../images/swiperArrN.png') no-repeat;
+    background-position: 0 0;
+}
+
+.sw-brand-next:hover {
+    background-position: 0 -2rem;
+    cursor: pointer;
+}
+
+.sw-brand-pg {
+    left: 2.6rem;
+    top: 0;
+    width: 9rem;
+    color: #bbb;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.04rem;
+}
+
+.sw-brand-pg .swiper-pagination-current {
+    font-weight: 700;
+    color: #222;
+}
+
+.brand-slide {
+    position: relative;
+    display: block;
+    width: 90rem;
+    height: 28.5rem;
+}
+
+.sw-brand {
+    height: 100%;
+}
+
+.brand-active {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 3.5rem 0;
+}
+
+.active-box-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.active-box-img {
+    display: block;
+}
+
+.active-box-name {
+    display: block;
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.045rem;
+}
+
+.active-box-txt {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.active-box-txt>li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 50%;
+    border-right: 0.1rem solid #e2e2e2;
+}
+
+.active-box-txt>li:last-child {
+    border-right: 0;
+}
+
+.active-box-txt>li>dl {}
+
+.active-box-txt>li>dl>dt {
+    color: #666;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.04rem;
+    padding-top: 0.6rem;
+}
+
+.active-box-txt>li>dl>dd {
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.045rem;
+    white-space: nowrap;
+}
+
+/* 배너 영역 */
+.banner {
+    position: relative;
+    display: block;
+    padding: 8rem 0;
+}
+
+.banner-slide {
+    position: relative;
+    display: block;
+}
+
+.sw-banner {
+    height: 22rem;
+}
+
+.sw-banner-link {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sw-banner-link img {
+    width: 100%;
+}
+
+.sw-banner-prev {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 1.9rem;
+    height: 3.4rem;
+    background: url('../images/bannerArr.png') no-repeat center;
+    background-position: 0 -3.4rem;
+    z-index: 10;
+}
+
+.sw-banner-prev:hover {
+    cursor: pointer;
+    background-position: 0 0;
+}
+
+.sw-banner-next {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1);
+    display: block;
+    width: 1.9rem;
+    height: 3.4rem;
+    background: url('../images/bannerArr.png') no-repeat center;
+    background-position: 0 -3.4rem;
+    z-index: 10;
+}
+
+.sw-banner-next:hover {
+    cursor: pointer;
+    background-position: 0 0;
+}
+
+/* 레시피 영역 */
+.recipe {
+    position: relative;
+    display: block;
+    padding-bottom: 8rem;
+}
+
+.recipe-title {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.08rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.recipe-title b {
+    font-weight: 700;
+}
+
+.recipe-wrap {
+    position: relative;
+    display: block;
+}
+
+.recipe-main {
+    position: relative;
+    display: block;
+    width: 79rem;
+    height: 42rem;
+    overflow: hidden;
+}
+
+.recipe-main>a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('../images/recipe_main.jpg') no-repeat center;
+}
+
+.recipe-main-title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 15.5rem;
+    height: 15.5rem;
+    background-color: #76bd42;
+    box-sizing: border-box;
+    padding-left: 1.5rem;
+    padding-top: 9.5rem;
+
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.0625rem;
+}
+
+.recipe-main-name {
+    position: absolute;
+    left: 15.5rem;
+    bottom: 0;
+    display: block;
+    width: 49rem;
+    height: 15.5rem;
+    background: rgb(255, 255, 255, 0.85);
+
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.48;
+    letter-spacing: -0.0375rem;
+
+    padding-left: 3rem;
+    padding-top: 4rem;
+}
+
+.recipe-main-name b {
+    color: #000;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.0375rem;
+}
+
+.recipe-con {
+    position: relative;
+    width: 34.5rem;
+    height: 42rem;
+}
+
+.recipe-con-list {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 26.5rem;
+    overflow: hidden;
+}
+
+.recipe-con-scroll {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 24rem;
+    overflow: hidden;
+}
+
+
+.recipe-con-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 7rem;
+    margin-bottom: 1.5rem;
+    padding-left: 4rem;
+}
+
+.recipe-con-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: url('../images/inpCheck.png') no-repeat;
+    background-position: 0 -3.6rem;
+}
+
+.recipe-con-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.recipe-con-img {
+    position: relative;
+    display: block;
+    width: 7rem;
+    height: 7rem;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    float: left;
+}
+
+.recipe-con-img img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: multiply;
+    width: 100%;
+    height: auto;
+}
+
+.recipe-con-txt {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.47;
+    letter-spacing: -0.0375rem;
+    float: left;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.recipe-con-txt b {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.05rem;
+}
+
+.recipe-con-txt em {
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.recipe-con-count {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 3.5rem 0;
+
+    color: #000;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.0375rem;
+    padding-left: 4rem;
+
+    border-top: 0.1rem solid #eee;
+}
+
+.recipe-con-count::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: url('../images/inpCheck.png') no-repeat;
+    background-position: 0 -3.6rem;
+}
+
+.recipe-con-total {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.recipe-con-buy {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.05rem;
+    text-align: center;
+    padding: 2rem;
+    border: 0.1rem solid #bbb;
+    transition: background-color 0.3s;
+}
+
+.recipe-con-buy b {
+    font-weight: 700;
+}
+
+.recipe-con-buy:hover {
+    background-color: #f9f9f9;
+}
+
+/* 후기 영역 */
+.review {
+    position: relative;
+    display: block;
+    padding: 8rem 0;
+    background-color: #fbf5f1;
+}
+
+.review .container {
+    height: 23.5rem;
+}
+
+.review-box {
+    position: relative;
+    display: block;
+    width: 30rem;
+    height: 28.5rem;
+}
+
+.review-box-title {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.08rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.review-box-title b {
+    font-weight: 700;
+}
+
+.review-box-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 2rem;
+    height: 0.2rem;
+    background: #707070;
+}
+
+.review-box-txt {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.0375rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.sw-review-control {
+    position: absolute;
+    left: 0;
+    top: 24rem;
+    display: block;
+}
+
+.sw-review-prev {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 2.6rem;
+    height: 2rem;
+    background: url('../images/swiperArrP.png') no-repeat;
+    background-position: 0 0;
+}
+
+.sw-review-prev:hover {
+    background-position: 0 -2rem;
+    cursor: pointer;
+}
+
+.sw-review-next {
+    position: absolute;
+    left: 11.5rem;
+    top: 0;
+    display: block;
+    width: 2.6rem;
+    height: 2rem;
+    background: url('../images/swiperArrN.png') no-repeat;
+    background-position: 0 0;
+}
+
+.sw-review-next:hover {
+    background-position: 0 -2rem;
+    cursor: pointer;
+}
+
+.sw-review-pg {
+    left: 2.6rem;
+    top: 0;
+    width: 9rem;
+    color: #bbb;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.04rem;
+}
+
+.sw-review-pg .swiper-pagination-current {
+    font-weight: 700;
+    color: #222;
+}
+
+.review-slide {
+    position: relative;
+    display: block;
+    width: 90rem;
+    height: 28.5rem;
+}
+
+.sw-review {
+    height: 100%;
+}
+
+.review-list {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 3.5rem 2rem;
+}
+
+.review-list-good {
+    position: relative;
+    display: block;
+    margin-bottom: 3rem;
+}
+
+.review-list-title {
+    display: block;
+    width: 16.5rem;
+    color: #000;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.47;
+    letter-spacing: -0.0425rem;
+    cursor: pointer;
+
+    /* 한줄 말줄임 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    margin-bottom: 0.5rem;
+}
+
+
+.review-list-rating {
+    display: block;
+    width: 5rem;
+    color: #000;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.176;
+    letter-spacing: -0.0425rem;
+    background: url('../images/icoRating.png') no-repeat left center;
+    padding-left: 2.5rem;
+    white-space: nowrap;
+}
+
+.review-list-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 6.6rem;
+    height: 6.6rem;
+    overflow: hidden;
+}
+
+.review-list-img img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+}
+
+.review-list-txt {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 6rem;
+
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.0325rem;
+
+    /* 크롬에서 줄내림 ... 처리  */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    white-space: normal;
+
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.review-list-user {
+    position: relative;
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.0325rem;
+}
+
+/* 커뮤니티 영역 */
+.community {
+    position: relative;
+    display: block;
+    padding-top: 8rem;
+    padding-bottom: 12rem;
+}
+
+.community .container {
+    display: table;
+    table-layout: fixed;
+}
+
+.comm-box {
+    position: relative;
+    display: table-cell;
+    width: 40rem;
+    border-right: 0.1rem solid #e5e5e5;
+    padding: 0 3.5rem;
+}
+
+.comm-box:last-child {
+    border-right: 0;
+}
+
+.comm-title {
+    position: relative;
+    display: block;
+    color: #000;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.05rem;
+}
+
+
+/* 탭메뉴 포커스 */
+.tab-menu {
+    display: inline-block;
+    color: #999;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.tab-menu-active {
+    color: #000;
+    font-weight: 700;
+}
+
+.tab-menu-bar {
+    position: relative;
+    display: inline-block;
+    width: 0.1rem;
+    height: 1.8rem;
+    background: #e5e5e5;
+    margin: 0 1rem;
+    vertical-align: -0.2rem;
+}
+
+.comm-news-wrap {
+    position: relative;
+    display: block;
+    margin-top: 3rem;
+}
+
+/* 탭 메뉴 내용 리스트 */
+
+.comm-news-list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+}
+
+.comm-news-list-active {
+    display: block;
+}
+
+.comm-news-list>li {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.comm-news-list>li>a {
+    display: block;
+    float: left;
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.461;
+    letter-spacing: -0.0325rem;
+}
+
+.comm-news-list>li>span {
+    display: block;
+    float: right;
+    color: #999;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.461;
+    letter-spacing: -0.0325rem;
+}
+
+.comm-tel {
+    display: block;
+    margin-top: 1.5rem;
+
+    color: #76bd42;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.187;
+    letter-spacing: 0;
+}
+
+.comm-info {
+    display: block;
+    margin-top: 1rem;
+
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.4615;
+    letter-spacing: -0.0325rem;
+}
+
+.comm-info em {
+    color: #666;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.comm-info a {
+    font-weight: 700;
+}
+
+.comm-info b {
+    font-weight: 700;
+}
+
+.comm-link-wrap {
+    position: relative;
+    display: block;
+    margin-top: 1.5rem;
+}
+
+.comm-link-wrap a {
+    display: block;
+    float: left;
+    width: 48.5%;
+    margin-right: 2.5%;
+    padding: 0 1.3rem;
+    line-height: 3.8rem;
+    border: 0.1rem solid #e5e5e5;
+    background: url('../images/icoFaq.png') no-repeat;
+    background-position: calc(100% - 1.3rem) 50%;
+    margin-bottom: 1rem;
+
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: -0.0325rem;
+}
+
+.comm-link-wrap a:nth-child(2n) {
+    margin-right: 0;
+}
+
+/* 하단 영역 */
+.footer {
+    position: relative;
+    display: block;
+}
+
+.footer-top {
+    position: relative;
+    display: block;
+    border-top: 0.1rem solid #f1f1f1;
+    border-bottom: 0.1rem solid #f1f1f1;
+}
+
+.footer-menu {
+    position: relative;
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+
+.footer-menu>li {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 2rem 1rem;
+}
+
+.footer-menu>li::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.2rem;
+    height: 0.2rem;
+    background: #a9b0b8;
+}
+
+.footer-menu>li:first-child {
+    padding-left: 0;
+}
+
+.footer-menu>li:last-child {
+    padding-right: 0;
+}
+
+.footer-menu>li:last-child::after {
+    content: none;
+}
+
+.footer-menu>li>a {
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.461;
+    letter-spacing: -0.0325rem;
+}
+
+.sitemap {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 2rem 1.5rem;
+}
+
+.sitemap a {
+    display: block;
+    color: #666;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.461;
+    letter-spacing: -0.0325rem;
+}
+
+.sitemap a span {
+    display: inline-block;
+    width: 3rem;
+}
+
+.sitemap a::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: url('../images/btnMore.png') no-repeat center;
+    vertical-align: 0rem;
+    margin-left: 0.5rem;
+}
+
+.footer-main {
+    position: relative;
+    display: block;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+}
+
+.copy {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.copy-list {
+    display: block;
+    color: #666;
+    font-size: 0;
+    font-weight: 400;
+    line-height: 1.692;
+    letter-spacing: -0.0325rem;
+}
+
+.copy-list span,
+.copy-list address {
+    font-size: 1.3rem;
+}
+
+.copy-list a {
+    color: #000;
+    font-weight: 500;
+}
+
+.copy-list .f-email {
+    font-weight: 400;
+}
+
+.copy-list address {
+    font-style: normal;
+}
+
+.copy-list span {
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+.copy-list span::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    display: block;
+    width: 0.1rem;
+    height: 1rem;
+    background: #e5e5e5;
+}
+
+.copy-list .no-sp {
+    padding-left: 0;
+}
+
+.copy-list .no-bar {
+    padding-right: 0;
+}
+
+.copy-list .no-bar::after {
+    content: none;
+}
+
+.copy p {
+    color: #999;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.0275rem;
+    margin-top: 3rem;
+}
+
+.sns {
+    position: relative;
+    display: block;
+    float: right;
+    overflow: hidden;
+    padding-top: 1rem;
+}
+
+.sns a {
+    display: block;
+    float: left;
+    width: 2.6rem;
+    height: 2.6rem;
+    background: url('../images/ftSns.png') no-repeat;
+
+    margin-left: 1rem;
+}
+
+.sns .i-ig {
+    background-position: 0 -2.6rem;
+}
+
+.sns .i-fb {
+    background-position: 0 0;
+}
+
+.sns .i-nb {
+    background-position: 0 -5.2rem;
+}
+
+.sns .i-yt {
+    background-position: 0 -7.8rem;
+}
+
+.sns .i-kk {
+    background-position: 0 -10.4rem;
+}
